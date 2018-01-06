@@ -1,0 +1,23 @@
+﻿  MockChannel.cpp
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\mockchannel\mockchannel.cpp(207): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\mockchannel\mockchannel.cpp(208): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Utilities.cpp
+  Sockets.cpp
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(161): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(180): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(199): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(240): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(248): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\sockets\sockets.cpp(267): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+  MsgServer.cpp
+  MsgClient.cpp
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\msgclient\msgclient.cpp(122): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\msgclient\msgclient.cpp(123): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\manjunath gowda\desktop\project 4\project3-mpandura-manjunathpanduranga\msgclient\msgclient.cpp(172): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+  Logger.cpp
+  HttpMessage.cpp
+  FileSystem.cpp
+  Cpp11-BlockingQueue.cpp
+  Generating Code...
+Cpp11-BlockingQueue.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  MockChannel.vcxproj -> C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\x64\Debug\MockChannel.lib

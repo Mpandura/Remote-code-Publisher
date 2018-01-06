@@ -1,0 +1,14 @@
+C:\Users\Manjunath Gowda\Downloads\CodeAnalyzer (1)\AbstractSyntaxTree
+false
+false
+false
+true
+AbstrSynTree.h
+true
+true
+false
+false
+true
+false
+false
+true

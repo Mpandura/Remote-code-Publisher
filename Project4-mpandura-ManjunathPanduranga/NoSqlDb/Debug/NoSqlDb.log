@@ -1,0 +1,14 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (NoSqlDb.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  TestExecutive.cpp
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(201): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(217): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(228): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(243): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(256): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(272): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(283): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\testexecutive.cpp(306): warning C4018: '<': signed/unsigned mismatch
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\nosqldb.h(485): warning C4715: 'NoSqlDb<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::Query2_UsingRegularExpression': not all control paths return a value
+e:\spring\ood\manjunathpanduranga-project1\project-1\nosqldb\strhelper.h(46): warning C4172: returning address of local variable or temporary
+  NoSqlDb.vcxproj -> E:\SPRING\OOD\ManjunathPanduranga-Project1\Project-1\Debug\TestExecutive.exe
+  NoSqlDb.vcxproj -> E:\SPRING\OOD\ManjunathPanduranga-Project1\Project-1\Debug\TestExecutive.pdb (Full PDB)

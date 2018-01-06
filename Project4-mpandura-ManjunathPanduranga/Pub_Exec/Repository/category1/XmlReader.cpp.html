@@ -1,0 +1,317 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>///////////////////////////////////////////////////////////////////////
+// XmlReader.cpp - Parse XML strings                                 //
+// ver 2.2                                                           //
+// Language:    Visual C++, Visual Studio 2010, SP1                  //
+// platform:    Toshiba Portege R705, Windows 7, Home Premium, SP1   //
+// Application: Summer 2011 Projects                                 //
+// Author:      Jim Fawcett, Syracuse University, CST 4-187          //
+//              www.lcs.syr.edu/faculty/fawcett, (315) 443-3948      //
+///////////////////////////////////////////////////////////////////////
+
+#include "XmlReader.h"
+#include &ltctype.h&gt
+#include &ltstack&gt
+#include &ltalgorithm&gt
+
+XmlReader::XmlReader(const std::string& xml)
+	: _xml(xml), _position(0), localposition(0) <div71 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo71">+</button>
+<div2011 id="demo71" class="collapse">{}</div71></div2011>
+
+//----&lt helper identifies markup chars &gt-----------------------------
+
+bool specialChar(char ch)
+<div78 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo78">+</button>
+<div1988 id="demo78" class="collapse">{
+	bool test = isspace(ch) || ch == '/' || ch == '&gt' || ch == '&lt' || ch == '=';
+	test = test || ch == '\'' || ch == '"';
+	return test;
+}</div78></div1988>
+//----&lt helper finds identifiers &gt-----------------------------------
+
+std::string XmlReader::extractIdentifier(size_t& pos)
+<div51 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo51">+</button>
+<div1999 id="demo51" class="collapse">{
+	std::string ident;
+	while (true)
+	<div18 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo18">+</button>
+<div2009 id="demo18" class="collapse">{
+		if (pos == _xml.size())
+			return ident;
+		char ch = _xml[pos];
+		if (specialChar(ch))
+			++pos;
+		else
+			break;
+	}</div18></div2009>
+	while (true)
+	<div19 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo19">+</button>
+<div2007 id="demo19" class="collapse">{
+		char ch = _xml[pos];
+		if (specialChar(ch))
+			break;
+		ident += ch;
+		++pos;
+	}</div19></div2007>
+	return ident;
+}</div19></div2007>
+//----&lt return current element string &gt------------------------------
+
+std::string XmlReader::element()
+<div0 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo0">+</button>
+<div2012 id="demo0" class="collapse">{
+	// find tag - assumes _position points to character after
+	// opening "&lt" on entry
+	localposition = _position;
+	_tag = extractIdentifier(localposition);
+
+	// is declaration?
+	std::string decTag = "?xml";
+	if (_tag.compare("?xml") == 0)
+	<div60 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo60">+</button>
+<div1991 id="demo60" class="collapse">{
+		size_t locpos = _xml.find("?&gt");
+		return _xml.substr(_position - 1, locpos - _position + 3);
+	}</div60></div1991>
+
+	// is comment?
+	if (_tag.compare("!--") == 0)
+	<div10 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo10">+</button>
+<div2002 id="demo10" class="collapse">{
+		size_t locpos = _xml.find("--&gt");
+		return _xml.substr(_position - 1, locpos - _position + 4);
+	}</div10></div2002>
+
+	// find end of element &lt/tag&gt
+	size_t locpos1 = localposition;
+
+	// note: tracks element scope with tagStack, so will correctly
+	// return nested elements with the same tag name
+	std::stack&ltstd::string&gt tagStack;
+	tagStack.push(_tag);
+	while (true)
+	<div70 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo70">+</button>
+<div1990 id="demo70" class="collapse">{
+		locpos1 = _xml.find(_tag, locpos1);
+		if (locpos1 &gt= _xml.size())
+			break;
+		if (_xml[locpos1 - 1] == '/' && _xml[locpos1 + _tag.size()] == '&gt')  // modified 2/15/2012
+			tagStack.pop();
+		else if (_xml[locpos1 - 1] == '&lt')
+			tagStack.push(_tag);
+		if (tagStack.size() == 0)
+			break;
+		++locpos1;
+	}</div70></div1990>
+
+	// find end element of self-closing tag, e.g., &lttag /&gt
+	size_t locpos2 = _xml.find("&gt", localposition);
+	if (_xml[locpos2 - 1] != '/')
+		locpos2 = _xml.size();
+
+	// find end element &lt/tag&gt
+	localposition = std::min(locpos1, locpos2);
+	if (localposition &gt= _xml.size())
+		throw std::exception("malformed XML");
+	if (localposition == locpos1)
+	<div76 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo76">+</button>
+<div2002 id="demo76" class="collapse">{
+		localposition = _xml.find('&gt', localposition);
+		return _xml.substr(_position - 1, localposition - _position + 2);
+	}</div76></div2002>
+	return _xml.substr(_position - 1, localposition - _position + 2);
+}</div76></div2002>
+//----&lt return body string &gt-----------------------------------------
+
+std::string XmlReader::body()
+<div43 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo43">+</button>
+<div2003 id="demo43" class="collapse">{
+	if (_tag.compare("?xml") == 0 || _tag.compare("!--") == 0)
+	<div64 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo64">+</button>
+<div1994 id="demo64" class="collapse">{
+		return "";
+	}</div64></div1994>
+	std::string elem = element();
+	size_t locpos1 = elem.find('&gt');
+	if (locpos1 &gt= elem.size())
+		throw std::exception("malformed XML");
+	if (elem[locpos1 - 1] == '/')
+		return "";
+	std::string localtag = tag();
+	size_t locpos2 = elem.find_last_of("&lt/");
+	if (locpos2 &lt elem.size())
+		return elem.substr(locpos1 + 1, locpos2 - locpos1 - 2);
+	return "";
+}</div64></div1994>
+//----&lt move to next XML tag &gt---------------------------------------
+
+bool XmlReader::next()
+<div82 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo82">+</button>
+<div2001 id="demo82" class="collapse">{
+	while (true)
+	<div65 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo65">+</button>
+<div1992 id="demo65" class="collapse">{
+		_position = _xml.find('&lt', _position);
+		if (_position &gt= _xml.size())
+			return false;
+		++_position;
+		if (_xml[_position] != '/')
+			break;
+	}</div65></div1992>
+	return true;
+}</div65></div1992>
+//----&lt return tag string &gt------------------------------------------
+
+std::string XmlReader::tag()
+<div77 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo77">+</button>
+<div1999 id="demo77" class="collapse">{
+	localposition = _position;
+	return extractIdentifier(localposition);
+}</div77></div1999>
+//----&lt return vector of attributes &gt--------------------------------
+
+XmlReader::attribElems XmlReader::attributes()
+<div25 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo25">+</button>
+<div1992 id="demo25" class="collapse">{
+	_attributes.clear();
+	if (_tag.compare("?xml") == 0 || _tag.compare("!--") == 0)
+		return _attributes;
+	localposition = _position;
+	// move past tag
+	extractIdentifier(localposition);
+
+	// find attributes
+	size_t locpos = _xml.find('&gt', localposition);
+	while (true)
+	<div29 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo29">+</button>
+<div1993 id="demo29" class="collapse">{
+		std::string name = extractIdentifier(localposition);
+		if (locpos &lt localposition)
+			return _attributes;
+		std::string value = extractIdentifier(localposition);
+		if (locpos &lt localposition)
+			throw std::exception("malformed XML");
+		std::pair&ltstd::string, std::string&gt elem;
+		elem.first = name;
+		elem.second = value;
+		_attributes.push_back(elem);
+	}</div29></div1993>
+	return _attributes;
+}</div29></div1993>
+//----&lt reposition string index &gt------------------------------------
+
+bool XmlReader::position(size_t p)
+<div23 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo23">+</button>
+<div2005 id="demo23" class="collapse">{
+	if (p &lt 0 || _xml.size() &lt= p)
+		return false;
+	_position = p;
+	return true;
+}</div23></div2005>
+//----&lt test stub &gt--------------------------------------------------
+
+#ifdef TEST_XMLREADER
+#include &ltiostream&gt
+
+int main()
+<div2 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo2">+</button>
+<div2007 id="demo2" class="collapse">{
+	std::cout &lt&lt "\n  Testing XmlReader";
+	std::cout &lt&lt "\n ===================\n";
+
+	std::string Prologue = "&lt?xml version=\"1.0\"?&gt&lt!-- top level comment --&gt";
+	std::string test1 = Prologue;
+	test1 += "&ltparent att1='val1' att2='val2'&gt&ltchild1 /&gt&ltchild2&gtchild2 body&ltchild1 /&gt&lt/child2&gt&lt/parent&gt";
+	std::string test2 = Prologue;
+	test2 += "&ltDir&gt&ltpath&gt/TestFile/Dir1&lt/path&gt&ltFile&gt&ltname&gttext1.txt&lt/name&gt&ltdate&gt02/11/2012&lt/date&gt&lt/File&gt&lt/Dir&gt";
+	XmlReader rdr(test1);
+
+	std::cout &lt&lt "\n  source = " &lt&lt test1.c_str() &lt&lt std::endl;
+
+	// testing helper function
+
+	std::cout &lt&lt "\n  Testing extractIdentifier";
+	std::cout &lt&lt "\n ---------------------------";
+	std::string ident;
+	size_t position = 1;
+	do
+	<div23 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo23">+</button>
+<div2011 id="demo23" class="collapse">{
+		ident = rdr.extractIdentifier(position);
+		std::cout &lt&lt "\n  " &lt&lt ident.c_str();
+	}</div23></div2011> while (ident.size() &gt 0);
+
+	// testing typical use, step through each element extracting tags, attributes,
+	// bodies, and or entire element strings
+
+	std::cout &lt&lt "\n  testing next(), tag(), element(), body(), and attributes()";
+	std::cout &lt&lt "\n -----------------------------------------------------------";
+	rdr.reset();
+	while (rdr.next())
+	<div37 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo37">+</button>
+<div1986 id="demo37" class="collapse">{
+		std::cout &lt&lt "\n  tag:     " &lt&lt rdr.tag().c_str();
+		std::cout &lt&lt "\n  element: " &lt&lt rdr.element().c_str();
+		std::cout &lt&lt "\n  body:    " &lt&lt rdr.body().c_str();
+		XmlReader::attribElems attribs = rdr.attributes();
+		for (size_t i = 0; i&ltattribs.size(); ++i)
+			std::cout &lt&lt "\n  attributes: " &lt&lt attribs[i].first.c_str() &lt&lt ", " &lt&lt attribs[i].second.c_str();
+	}</div37></div1986>
+	std::cout &lt&lt "\n\n";
+
+	// testing typical use, step through each element extracting tags, attributes,
+	// bodies, and or entire element strings
+
+	rdr.xml() = test2;
+	std::cout &lt&lt "\n  source = " &lt&lt rdr.xml().c_str() &lt&lt std::endl;
+
+	std::cout &lt&lt "\n  testing next(), tag(), element(), body(), and attributes()";
+	std::cout &lt&lt "\n -----------------------------------------------------------";
+
+	rdr.reset();
+	while (rdr.next())
+	<div95 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo95">+</button>
+<div1990 id="demo95" class="collapse">{
+		std::cout &lt&lt "\n  tag:     " &lt&lt rdr.tag().c_str();
+		std::cout &lt&lt "\n  element: " &lt&lt rdr.element().c_str();
+		std::cout &lt&lt "\n  body:    " &lt&lt rdr.body().c_str();
+		XmlReader::attribElems attribs = rdr.attributes();
+		for (size_t i = 0; i&ltattribs.size(); ++i)
+			std::cout &lt&lt "\n  attributes: " &lt&lt attribs[i].first.c_str() &lt&lt ", " &lt&lt attribs[i].second.c_str();
+	}</div95></div1990>
+	std::cout &lt&lt "\n\n";
+	return 0;
+}</div95></div1990>
+#endif
+</pre></body></html>

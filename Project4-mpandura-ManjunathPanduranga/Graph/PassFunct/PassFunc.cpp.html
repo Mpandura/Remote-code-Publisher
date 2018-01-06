@@ -1,0 +1,58 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\PassFunct\PassFunc.cpp</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\PassFunct\PassFunc.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\PassFunct\PassFunc.cpp</a>
+</div><hr /><body><pre>/////////////////////////////////////////////////////////////////////////////
+// PassFunc.cpp - function accepting both function pointer and functor     //
+//                                                                         //
+// Jim Fawcett, CSE687 - Object Oriented Design, Demonstration Spring 2013 //
+/////////////////////////////////////////////////////////////////////////////
+
+#include &ltiostream&gt
+
+typedef void (*fptr)(double d);
+
+template&lttypename T&gt
+void testFunction(T t)
+<div91 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo91">+</button>
+<div2011 id="demo91" class="collapse">{
+  std::cout &lt&lt "\n  from function: value is " &lt&lt t;
+}</div91></div2011>
+
+template&lttypename T&gt
+class TestFunctor <div74 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo74">+</button>
+<div1995 id="demo74" class="collapse">{
+public:
+  void operator()(T t)
+  <div96 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo96">+</button>
+<div2006 id="demo96" class="collapse">{
+    std::cout &lt&lt "\n  from functor:  value is " &lt&lt t;
+  }</div96></div2006>
+}</div96></div2006>;
+
+template &lttypename Arg&gt
+void TestArgs(Arg arg)
+<div48 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo48">+</button>
+<div1994 id="demo48" class="collapse">{
+  arg(3.1415927);
+}</div48></div1994>
+
+int main()
+<div68 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo68">+</button>
+<div1989 id="demo68" class="collapse">{
+  TestArgs(testFunction&ltdouble&gt);
+  TestArgs(TestFunctor&ltdouble&gt());
+  TestArgs(testFunction&ltint&gt);
+  TestArgs(TestFunctor&ltint&gt());
+
+  std::cout &lt&lt "\n\n";
+  return 0;
+}</div68></div1989></pre></body></html>

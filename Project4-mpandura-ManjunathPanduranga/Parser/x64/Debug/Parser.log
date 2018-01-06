@@ -1,0 +1,14 @@
+﻿  Parser.cpp
+  ConfigureParser.cpp
+  ActionsAndRules.cpp
+  Utilities.cpp
+  Tokenizer.cpp
+  SemiExp.cpp
+  ScopeStack.cpp
+  Logger.cpp
+  GrammarHelpers.cpp
+  FileSystem.cpp
+  AbstrSynTree.cpp
+  Generating Code...
+  Parser.vcxproj -> E:\project4\Project4-mpandura-ManjunathPanduranga\x64\Debug\Parser.exe
+  Parser.vcxproj -> E:\project4\Project4-mpandura-ManjunathPanduranga\x64\Debug\Parser.pdb (Full PDB)

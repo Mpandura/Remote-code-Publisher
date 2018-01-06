@@ -1,0 +1,94 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Sat Apr  1 21:49:39 2017
+     Path: "C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser"
+     Args: *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+         ActionsAndRules.h    function                           doAction     595      85       6
+         ActionsAndRules.h    function                             doTest     899      74      10
+       ConfigureParser.cpp    function                              Build      89      98       3
+                Parser.cpp    function                               main      89      55       8
+
+              public data: Parser.h : 107 - class IRule
+                static const bool Continue = true ; 
+              public data: Parser.h : 108 - class IRule
+                static const bool Stop = false ; 
+
+
+ -------------------------------------------------------------------------------------------------------------------------------
+   |    Element key  |      type name  |          namespace      |                           filename
+ -------------------------------------------------------------------------------------------------------------------------------
+  |      currentPath  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  | StructDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |      ~Repository  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |NamespaceDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  | Global Namespace  |    namespace  |       Global Namespace   |                                      
+  |     CodeAnalysis  |    namespace  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleCSharpFunctionDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |       Repository  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |         language  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |          package  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |    HandleDefault  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |      getInstance  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleCppDeclaration  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |    currentAccess  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleControlDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |       scopeStack  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleAccessSpecifier  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |              AST  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |             next  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.cpp
+  |   getGlobalScope  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |          ~Parser  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |            Toker  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |         EndScope  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |        lineCount  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |            IRule  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |ConfigParseForCodeAnal  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ConfigureParser.h
+  |       BeginScope  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleCSharpDeclaration  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |           doTest  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |    PrintFunction  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  | HandleBeginScope  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |        addAction  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.cpp
+  |         doAction  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |           Attach  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ConfigureParser.cpp
+  |   HandleEndScope  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |            parse  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.cpp
+  |HandleCSharpExecutable  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |DetectAccessSpecifier  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |         IBuilder  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |            Build  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ConfigureParser.cpp
+  | PreprocStatement  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandlePreprocStatement  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |ControlDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleNamespaceDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |  ClassDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleClassDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleStructDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |CppFunctionDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleCppFunctionDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |        doActions  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.cpp
+  |CSharpFunctionDefinition  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |HandleCppExecutable  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |             main  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.cpp
+  |PrettyPrintFunction  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |         ~IAction  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |   CppDeclaration  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |    CppExecutable  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |CSharpDeclaration  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  | CSharpExecutable  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |          Default  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ActionsAndRules.h
+  |           ~IRule  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |~ConfigParseForCodeAnal  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\ConfigureParser.cpp
+  |          IAction  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |        ~IBuilder  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |           Parser  |        class  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.h
+  |          addRule  |     function  |           CodeAnalysis   |   C:\Users\Manjunath Gowda\CodeAnalyzer (1)\Parser\Parser.cpp
+ 
+    searched     5 dirs
+   processed     6 files

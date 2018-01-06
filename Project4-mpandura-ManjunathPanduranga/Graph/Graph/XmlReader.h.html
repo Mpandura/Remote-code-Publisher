@@ -1,0 +1,105 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.h</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.h.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.h</a>
+</div><hr /><body><pre>#ifndef XMLREADER_H
+#define XMLREADER_H
+///////////////////////////////////////////////////////////////////////
+// XmlReader.h - Parse XML strings                                   //
+// ver 2.2                                                           //
+// Language:    Visual C++, Visual Studio 2010, SP1                  //
+// platform:    Toshiba Portege R705, Windows 7, Home Premium, SP1   //
+// Application: Summer 2011 Projects                                 //
+// Author:      Jim Fawcett, Syracuse University, CST 4-187          //
+//              www.lcs.syr.edu/faculty/fawcett, (315) 443-3948      //
+///////////////////////////////////////////////////////////////////////
+/*
+ * Note: XmlReader and XmlWriter supercede both XmlTran and XmlParser.
+ *
+ * Package Operations:
+ * ===================
+ * This package contains a single class, XmlReader.  It provides a
+ * simple interface to step from XML element to element and extract
+ * constituent parts, e.g., tag, attributes, and body.  The package
+ * does not support editing XML strings.  For that, you should use
+ * the XmlDocument package.
+ *
+ * Parsing honors element scope, e.g., if there are two elements with
+ * the same tag names at different levels of the document scope, the 
+ * XmlReader will not get confused and prematurely close an element
+ * because it found a matching closing tag for a contained element.
+ *
+ * Exceptions will be thrown by element(), body(), and attributes()
+ * if malformed XML is detected.
+ *
+ * Required Files:
+ * ===============
+ * XmlReader.h, XmlReader.cpp
+ *
+ * Build Process:
+ * ==============
+ * cl /Eha XmlReader.cpp
+ *
+ * Maintenance History:
+ * ====================
+ * ver 2.2 : 15 Feb 12
+ * - fixed bug found by Yateen Nikharge in element(). Search for
+ *   element end was not selective enough.
+ * - previously added member functions position() and position(size_t p)
+ *   to enable measuring and changing internal string index - used in
+ *   creating Visual Studio project.
+ * ver 2.1 : 25 Jul 11
+ * - added comments to manual page, above, and implementations in
+ *   XmlReader.cpp
+ * ver 2.0 : 27 Jun 11
+ * - moved #include&ltstack&gt to XmlReader.cpp
+ * - moved #include&ltiostream&gt to test stub in XmlReader.cpp
+ * ver 1.0 : 26 Jun 11
+ * - first release
+ */
+#include &ltvector&gt
+
+class XmlReader
+<div24 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo24">+</button>
+<div2002 id="demo24" class="collapse">{
+public:
+  typedef std::vector&ltstd::pair&ltstd::string,std::string&gt&gt attribElems;
+  XmlReader(const std::string& xml);
+  bool next();
+  std::string tag();
+  attribElems attributes();
+  std::string body();
+  std::string element();
+  std::string extractIdentifier(size_t& pos);
+  void reset();
+  size_t position();
+  bool position(size_t p);
+  std::string& xml();
+private:
+  // source string
+  std::string _xml;
+  size_t _position;
+  // current element parts
+  std::string _tag;
+  attribElems _attributes;
+  size_t localposition;
+}</div24></div2002>;
+
+inline void XmlReader::reset() <div48 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo48">+</button>
+<div1988 id="demo48" class="collapse">{ _position = 0; }</div48></div1988>
+
+inline size_t XmlReader::position() <div95 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo95">+</button>
+<div2006 id="demo95" class="collapse">{ return _position; }</div95></div2006>
+
+inline std::string& XmlReader::xml() <div2 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo2">+</button>
+<div2005 id="demo2" class="collapse">{ return _xml; }</div2></div2005>
+
+#endif
+</pre></body></html>

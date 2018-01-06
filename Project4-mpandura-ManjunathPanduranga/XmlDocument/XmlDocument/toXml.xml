@@ -1,0 +1,72 @@
+
+  <NoSqlDb>
+    <element>
+      <children>
+        elem2
+      </children>
+      <value>
+        <name>
+          elem2
+        </name>
+        <category>
+          transport - Bikes
+        </category>
+        <description>
+          Royal Enfield 500 cc
+        </description>
+        <timedate>
+          Fri Feb 10 18:27:27 2017
+
+        </timedate>
+        <data>
+           two wheeler vehicle
+        </data>
+      </value>
+    </element>
+    <element>
+      <children>
+        elem2
+      </children>
+      <value>
+        <name>
+          elem2
+        </name>
+        <category>
+          transport - Bikes
+        </category>
+        <description>
+          Royal Enfield 500 cc
+        </description>
+        <timedate>
+          Fri Feb 10 18:27:27 2017
+
+        </timedate>
+        <data>
+           two wheeler vehicle
+        </data>
+      </value>
+    </element>
+    <element>
+      <children>
+        elem3
+      </children>
+      <value>
+        <name>
+          elem3
+        </name>
+        <category>
+          transport - Bikes
+        </category>
+        <description>
+          Audi Q800 sports car
+        </description>
+        <timedate>
+          Fri Feb 10 18:27:27 2017
+
+        </timedate>
+        <data>
+           two wheeler vehicle
+        </data>
+      </value>
+    </element>
+  </NoSqlDb>

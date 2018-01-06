@@ -1,0 +1,173 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.cpp</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>/////////////////////////////////////////////////////////////////////
+// SCC.cpp - Finds the strongly connected components               //
+// ver 1.0                                                         //
+//-----------------------------------------------------------------//
+// Language:    C++, Visual Studio 2015                            //
+// Platform:    Lenovo, Windows 10                                 //
+// Application: Project #2, CSE687 - Object Oriented Design, S2015 //
+// Author:		Manjunath Panduranga               				   //
+//		       					                                   //
+/////////////////////////////////////////////////////////////////////
+#include &ltvector&gt
+#include &ltsstream&gt
+#include &ltalgorithm&gt
+#define NIL -1
+#include "SCC.h"
+#pragma warning( disable : 4267 )
+using namespace CodeAnalysis;
+
+void strongly_connected_components::findingSCC()
+<div2 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo2">+</button>
+<div2004 id="demo2" class="collapse">{
+	int *prev = new int[Vertex_];
+	std::stack&ltint&gt *stack = new std::stack&ltint&gt();
+	int *storage = new int[Vertex_];
+	bool *visited = new bool[Vertex_];
+	for (int m = 0; m &lt Vertex_; m++)
+	<div27 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo27">+</button>
+<div2000 id="demo27" class="collapse">{
+		prev[m] = NIL;
+		storage[m] = NIL;
+		visited[m] = false;
+	}</div27></div2000>
+	for (int j = 0; j &lt Vertex_; j++)
+	<div43 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo43">+</button>
+<div1989 id="demo43" class="collapse">{
+		if (storage[j] == NIL)
+			StrongRecur(j, storage, prev, stack, visited);
+	}</div43></div1989>
+}</div43></div1989>
+
+
+
+void strongly_connected_components::StrongRecur(int next, int storage[], int prev[], std::stack&ltint&gt *stack, bool visited[])
+<div23 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo23">+</button>
+<div1987 id="demo23" class="collapse">{
+	int storing = 0;
+	static int tym = 0;
+	storage[next] = prev[next] = ++tym;
+	stack-&gtpush(next);
+	visited[next] = true;
+	Vertex&ltstd::string, std::string&gt &vertex = graph_[next];
+	for (size_t i = 0; i &lt vertex.size(); i++)
+	<div61 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo61">+</button>
+<div2006 id="demo61" class="collapse">{
+		Vertex&ltstd::string, std::string&gt::Edge edge = vertex[i];
+		Vertex&ltstd::string, std::string&gt &vertex_ = graph_[edge.first];
+		for (size_t j = 0; j &lt graph_.size(); j++)
+		<div3 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo3">+</button>
+<div1997 id="demo3" class="collapse">{
+			Vertex&ltstd::string, std::string&gt &vertex = graph_[j];
+			if (vertex.value() == vertex_.value())
+			<div5 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo5">+</button>
+<div2008 id="demo5" class="collapse">{
+	    		 if (visited[vertex.id()] == true)
+					prev[next] = min(prev[next], storage[vertex.id()]);
+				
+				else if (storage[vertex.id()] == -1)
+				<div25 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo25">+</button>
+<div1996 id="demo25" class="collapse">{
+					StrongRecur(vertex.id(), storage, prev, stack, visited);
+					prev[next] = min(prev[next], prev[vertex.id()]);
+				}</div25></div1996>
+				break;
+			}</div25></div1996>
+		}</div25></div1996>
+	}</div25></div1996>
+  
+	if (storage[next]==prev[next] )
+	<div92 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo92">+</button>
+<div2007 id="demo92" class="collapse">{
+		std::cout &lt&lt "\n\n";
+		std::stringstream stringstream;
+		stringstream &lt&lt "strongly connected components" &lt&lt count;
+		while (stack-&gttop() != next)
+		<div22 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo22">+</button>
+<div2011 id="demo22" class="collapse">{
+			storing = (int)stack-&gttop();
+			Vertex&ltstd::string, std::string&gt& v = graph_[storing];
+			visited[storing] = false;
+			strongMap_[stringstream.str()].insert(v.value());
+			stack-&gtpop();
+		}</div22></div2011>
+		storing = (int)stack-&gttop();
+		Vertex&ltstd::string, std::string&gt &vertex = graph_[storing];
+		visited[storing] = false;
+		stack-&gtpop();
+		strongMap_[stringstream.str()].insert(vertex.value());
+		count++;
+		stringstream.str("");
+	}</div22></div2011>
+}</div22></div2011>
+
+void CodeAnalysis::strongly_connected_components::persistsIntoXml(std::string filePa)
+<div64 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo64">+</button>
+<div1995 id="demo64" class="collapse">{
+	std::string theDocument;
+	XmlWriter wrg;
+	try <div87 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo87">+</button>
+<div2005 id="demo87" class="collapse">{
+		int count = 1;
+		std::unordered_map&ltint, std::vector&ltint&gt&gt& sCGraph = getCC();
+		wrg.indent();
+		wrg.start("Strongly Connected Components");
+		for (auto vert : sCGraph) <div13 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo13">+</button>
+<div1999 id="demo13" class="collapse">{
+			wrg.start("SCC");			
+			std::vector&ltint&gt x = sCGraph[vert.first];
+			for (auto edge : x) <div70 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo70">+</button>
+<div1995 id="demo70" class="collapse">{
+				wrg.start("files");
+				wrg.addBody(getName(edge));
+				wrg.end();
+			}</div70></div1995>
+			wrg.end();
+		}</div70></div1995>
+		wrg.end();
+		theDocument = wrg.xml();
+		std::ofstream input_file(filePa);
+		input_file &lt&lt theDocument;
+		input_file.close();
+	}</div70></div1995>
+	catch (const std::exception& e) <div35 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo35">+</button>
+<div2008 id="demo35" class="collapse">{
+		std::cout &lt&lt "exception:" &lt&lt e.what();
+	}</div35></div2008>
+}</div35></div2008>
+
+#ifdef TEST_STRONGCOMPONENTS
+int main()
+<div11 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo11">+</button>
+<div2005 id="demo11" class="collapse">{
+	return 0;
+}</div11></div2005>
+#endif</pre></body></html>

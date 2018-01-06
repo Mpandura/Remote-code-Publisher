@@ -1,0 +1,164 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.cpp</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>#include &ltiostream&gt
+#include &ltfstream&gt
+#include &ltsstream&gt
+#include "Graph.h"
+using namespace GraphAnal;
+
+typedef Graph&ltstd::string, std::string&gt graph;
+typedef Vertex&ltstd::string, std::string&gt vertex;
+typedef Display&ltstd::string, std::string&gt display;
+
+void showVert(Vertex&ltstd::string, std::string&gt& v)
+<div16 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo16">+</button>
+<div1990 id="demo16" class="collapse">{
+	std::cout &lt&lt "\n  " &lt&lt v.id();
+}</div16></div1990>
+
+template&lttypename V, typename E&gt
+void TshowVert(Vertex&ltV, E&gt& v)
+<div90 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo90">+</button>
+<div1997 id="demo90" class="collapse">{
+	std::cout &lt&lt "\n  " &lt&lt v.id();
+}</div90></div1997>
+
+
+#ifdef TEST_GRAPH
+
+int main()
+<div88 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo88">+</button>
+<div2001 id="demo88" class="collapse">{
+	std::cout &lt&lt "\n  Testing Graph Library";
+	std::cout &lt&lt "\n =======================\n";
+	try
+	<div40 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo40">+</button>
+<div1987 id="demo40" class="collapse">{
+
+		std::cout &lt&lt "\n  Constructing Graph instance";
+		std::cout &lt&lt "\n -----------------------------";
+		graph g;
+		//Graph&ltstd::string,std::string&gt g1;
+		//g1.addvertices();
+		vertex v1("a.cpp");
+		vertex v2("a.h");
+		vertex v3("b.cpp");
+		vertex v4("b.h");
+		vertex v5("c.h");
+		vertex v6("d.h");
+		g.addVertex(v2);
+		g.addVertex(v1);
+		g.addVertex(v3);
+		g.addVertex(v4);
+		g.addVertex(v5);
+		g.addEdge("e1", v1, v2);
+		g.addEdge("e2", v1, v3);
+		g.addEdge("e3", v2, v3);
+		g.addEdge("e4", v3, v1);
+		g.addEdge("e5", v3, v4);
+		g.addEdge("e6", v4, v2);
+		g.addEdge("e7", v6, v6);
+
+		display::show(g);
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Making copy of instance";
+		std::cout &lt&lt "\n -------------------------";
+		graph gcopy = g;
+		display::show(gcopy);
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Modifying copy's values";
+		std::cout &lt&lt "\n -------------------------";
+		for (auto& v : gcopy)
+			v.value() += "copy";
+
+		display::show(gcopy);
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Assigning original instance to copy";
+		std::cout &lt&lt "\n -------------------------------------";
+		gcopy = g;
+		display::show(gcopy);
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Vertices with no Parents:";
+		std::cout &lt&lt "\n ---------------------------";
+
+		std::vector&lt vertex &gt verts = display::vertsWithNoParents(g);
+		std::cout &lt&lt "\n  ";
+		for (size_t i = 0; i&ltverts.size(); ++i)
+			std::cout &lt&lt verts[i].value().c_str() &lt&lt " ";
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Testing Depth First Search with function pointer";
+		std::cout &lt&lt "\n --------------------------------------------------";
+		for (auto& vert : g)
+		<div64 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo64">+</button>
+<div2013 id="demo64" class="collapse">{
+			std::cout &lt&lt "\n  starting at id " &lt&lt vert.id();
+			g.dfs(vert, TshowVert&ltstd::string, std::string&gt);
+			// this works too: 
+			// g.dfs(vert, showVert);
+		}</div64></div2013>
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Testing Depth First Search with Functor";
+		std::cout &lt&lt "\n -----------------------------------------";
+
+		class showFunctor
+		<div46 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo46">+</button>
+<div2000 id="demo46" class="collapse">{
+		public:
+			void operator()(Vertex&ltstd::string, std::string&gt& vert)
+			<div90 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo90">+</button>
+<div1994 id="demo90" class="collapse">{
+				std::cout &lt&lt "\n  From functor: vertix id = " &lt&lt vert.id();
+				std::cout &lt&lt ", number of edges = " &lt&lt vert.size();
+			}</div90></div1994>
+		}</div90></div1994>;
+
+		g.dfs(g[0], showFunctor());
+		std::cout &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Testing Serialization to XML";
+		std::cout &lt&lt "\n ------------------------------";
+		std::string str = GraphToXmlString(g);
+		std::cout &lt&lt str &lt&lt "\n";
+		std::ofstream out("testGraph.xml");
+		out &lt&lt str &lt&lt "\n";
+
+		std::cout &lt&lt "\n  Testing Graph construction from XML";
+		std::cout &lt&lt "\n -------------------------------------";
+		graph gtest;
+		GraphFromXmlString(gtest, str);
+		display::show(gtest);
+		std::cout &lt&lt "\n\n";
+	}</div90></div1994>
+	catch (std::exception& ex)
+	<div70 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo70">+</button>
+<div2005 id="demo70" class="collapse">{
+		std::cout &lt&lt "\n\n  " &lt&lt ex.what() &lt&lt "\n\n";
+	}</div70></div2005>
+	std::cout &lt&lt "\n\n";
+	return 0;
+}</div70></div2005>
+
+#endif
+
+</pre></body></html>

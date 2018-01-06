@@ -1,0 +1,47 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Tue Apr  4 22:26:22 2017
+     Path: "C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files"
+     Args: *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+              public data: Grandparent.h : 10 - namespace Global Namespace
+                typedef std :: string str ; 
+              public data: Child.h : 16 - struct element
+                std :: vector < element > children ; 
+
+
+ -------------------------------------------------------------------------------------------------------------------------------
+   |    Element key  |      type name  |          namespace      |                           filename
+ -------------------------------------------------------------------------------------------------------------------------------
+  |     ~GrandParent  |     function  |       Global Namespace   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Grandparent.h
+  | Global Namespace  |    namespace  |       Global Namespace   |                                      
+  |           ~Child  |     function  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |           Parent  |        class  |                parent2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Parent.h
+  |            Child  |        class  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |     inlineMethod  |     function  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |          parent2  |    namespace  |                parent2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Parent.h
+  |        ChildTest  |    namespace  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |       ChildTest2  |    namespace  |             ChildTest2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child2.h
+  |      GrandParent  |        class  |       Global Namespace   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Grandparent.h
+  |        GPmethod2  |     function  |       Global Namespace   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Grandparent.h
+  |          parent1  |    namespace  |                parent1   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Parent.h
+  |        GPmethod3  |     function  |       Global Namespace   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Test.cpp
+  |  globalFunction2  |     function  |       Global Namespace   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Grandparent.h
+  |                T  |        class  |                parent2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Parent.h
+  |          element  |       struct  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |          method2  |     function  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |   globalFunction  |     function  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |  globalFunction1  |     function  |              ChildTest   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.h
+  |          method1  |     function  |             ChildTest2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.cpp
+  |          method3  |     function  |             ChildTest2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.cpp
+  |          method4  |     function  |             ChildTest2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Child\Child.cpp
+  |             main  |     function  |             ChildTest2   |   C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\files\files\Parent.cpp
+ 
+    searched     6 dirs
+   processed    16 files

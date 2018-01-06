@@ -1,0 +1,5 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (CLI-Shim.vcxproj, CLIShim.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ShimLayer.cpp
+  .NETFramework,Version=v4.5.2.AssemblyAttributes.cpp
+  ShimLayer.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+LINK : fatal error LNK1561: entry point must be defined

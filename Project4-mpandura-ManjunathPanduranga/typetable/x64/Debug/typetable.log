@@ -1,0 +1,7 @@
+﻿  typetable.cpp
+c:\users\manjunath gowda\downloads\codeanalyzer (1)\typetable\typetable.cpp(74): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+typetable.obj : error LNK2019: unresolved external symbol "public: __cdecl Logging::Logger::~Logger(void)" (??1Logger@Logging@@QEAA@XZ) referenced in function "void __cdecl `dynamic atexit destructor for 'private: static class Logging::Logger Logging::StaticLogger<2>::_logger''(void)" (??__F?_logger@?$StaticLogger@$01@Logging@@0VLogger@2@A@@YAXXZ)
+typetable.obj : error LNK2019: unresolved external symbol "public: struct CodeAnalysis::ASTNode * & __cdecl CodeAnalysis::AbstrSynTree::root(void)" (?root@AbstrSynTree@CodeAnalysis@@QEAAAEAPEAUASTNode@2@XZ) referenced in function "public: void __cdecl CodeAnalysis::TypeTable::doTableAnal(void)" (?doTableAnal@TypeTable@CodeAnalysis@@QEAAXXZ)
+typetable.obj : error LNK2001: unresolved external symbol "private: static class CodeAnalysis::Repository * CodeAnalysis::Repository::instance" (?instance@Repository@CodeAnalysis@@0PEAV12@EA)
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Manjunath Gowda\Downloads\CodeAnalyzer (1)\x64\Debug\typetable.exe : fatal error LNK1120: 4 unresolved externals

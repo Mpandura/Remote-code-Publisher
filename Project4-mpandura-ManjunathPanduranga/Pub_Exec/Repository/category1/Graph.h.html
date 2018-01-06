@@ -1,0 +1,552 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>#pragma once
+#ifndef GRAPH_H
+#define GRAPH_H
+#pragma warning( disable : 4267 )
+///////////////////////////////////////////////////////////////
+// Graph.h - Graph Library                                   //
+// Ver 1.6                                                   //
+// Language:    Visual C++ 2012                              //
+// Platform:    Lenova ThinkPad E420s, Windows 7             //
+// Application: Help for CSE687 - OOD, Pr#1, Spring 2013     //
+// Author:      Jim Fawcett, CST 4-187, Syracuse University  //
+//              (315) 443-3948, jfawcett@twcny.rr.com        //
+///////////////////////////////////////////////////////////////
+/*
+Package Operations:
+===================
+A graph is a collection of vertices, connected by edges.  Each
+vertex holds some kind of information held in an instance of
+a type V and an integer id, which should be unique with a given
+graph.  Each edge connects a parent vertex with a child
+vertex and it too holds information in an instance of a type E.
+
+This package provides two classes that support creation of
+instances of a graph: Vertex&ltV,E&gt and Graph&ltV,E&gt.  These are
+template-based with parameters V and E, as described above.
+
+The graph holds an aggregated collection of vertices.  Each
+vertex may hold one or more edges.  The edge is implemented
+as an instance of std::pair&ltint,E&gt where the first parameter
+is the id of the child vertex and the second parameter is
+an instance of the edge information type E.
+
+Note:
+It is important that vertex ids be unique.  If you set any of
+them with the second argument of the Vertex constructor or with
+the id() function it is up to you to ensure uniqueness.  If you
+don't explicitly set any ids then the constructor insures that
+vertices get sequential ids in the order constructed.
+
+Maintanence Information:
+========================
+Required files:
+---------------
+Graph.h, Graph.cpp,
+XmlReader.h, XmlReader.cpp,
+XmlWriter.h, XmlWriter.cpp
+
+Build Process:
+--------------
+Using Visual Studio Command Prompt:
+devenv Graph.sln /rebuild debug
+
+Revision History:
+-----------------
+ver 1.6 : 23 Feb 17
+- added inlines to to helper functions at the end of this file
+ver 1.5 : 16 Feb 13
+- now supports dfs with both function pointers and functors
+ver 1.4 : 11 Feb 13
+- removed indent function, now part of XmlWriter,
+replaced ctor with default param with two ctors,
+one supplies sequential ids, the other accepts user defined id
+ver 1.3 : 28 Jan 13
+- added GraphToXmlString and GraphFromXmlString functions
+ver 1.2 : 25 Jan 13
+- changed id() return to reference so can be changed
+ver 1.1 : 21 Jan 13
+- added prologue comments, compile test directive
+ver 1.0 : 14 Jan 13
+- first release
+
+*/
+/*
+* To Do:
+* - move GraphToXml and GraphFromXml to separate package
+* - Strong Components, Topological Sorting
+* - Find disconnected graph partitions
+*/
+
+#include &ltvector&gt
+#include &ltunordered_map&gt
+#include &ltstring&gt
+#include "XmlWriter.h"
+#include "XmlReader.h"
+#include &ltiostream&gt
+#include &ltsstream&gt
+//#include"../Analyzer/DepAnal.h"
+#include &ltset&gt
+
+namespace GraphAnal
+<div34 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo34">+</button>
+<div2004 id="demo34" class="collapse">{
+	///////////////////////////////////////////////////////////////
+	// Vertex class
+
+	template&lttypename V, typename E&gt
+	class Vertex
+	<div41 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo41">+</button>
+<div1987 id="demo41" class="collapse">{
+	public:
+		typedef std::pair&ltint, E&gt Edge;  // graph index of target vertex, edge type
+		typename typedef std::vector&ltEdge&gt::iterator iterator;
+		iterator begin();
+		iterator end();
+		Vertex(V v, size_t id);
+		Vertex(V v);
+		void add(Edge& edge);
+		Edge& operator[](size_t i);
+		Edge operator[](size_t i) const;
+		V& value();
+		size_t& id();
+		size_t size();
+		bool& mark();
+
+	private:
+		std::vector&ltEdge&gt _edges;
+		V _v;
+		size_t _id;
+		static size_t count;
+		bool _mark;
+	}</div41></div1987>;
+	//----&lt reserve memory for, and initialize, static count &gt-----
+	template&lttypename V, typename E&gt
+	size_t Vertex&ltV, E&gt::count = 0;
+
+	//----&lt set and return boolean mark, used for traversal &gt------
+	template&lttypename V, typename E&gt
+	bool& Vertex&ltV, E&gt::mark() <div45 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo45">+</button>
+<div1985 id="demo45" class="collapse">{ return _mark; }</div45></div1985>
+
+	//----&lt return iterator pointing to first edge &gt---------------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt::iterator Vertex&ltV, E&gt::begin() <div18 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo18">+</button>
+<div1988 id="demo18" class="collapse">{ return _edges.begin(); }</div18></div1988>
+
+	//----&lt return iterator pointing to one past last edge &gt-------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt::iterator Vertex&ltV, E&gt::end() <div39 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo39">+</button>
+<div1988 id="demo39" class="collapse">{ return _edges.end(); }</div39></div1988>
+
+	//----&lt construct instance, specifying id - must be unique &gt---
+	template&lttypename V, typename E&gt
+	Vertex&ltV, E&gt::Vertex(V v, size_t id) : _v(v), _id(id), _mark(false) <div79 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo79">+</button>
+<div2001 id="demo79" class="collapse">{}</div79></div2001>
+
+	//----&lt construct instance - creates id sequentially &gt-------
+	template&lttypename V, typename E&gt
+	Vertex&ltV, E&gt::Vertex(V v) : _v(v), _id(count++), _mark(false) <div87 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo87">+</button>
+<div2004 id="demo87" class="collapse">{}</div87></div2004>
+
+	//----&lt add edge to vertex edge collection &gt-------------------
+	template&lttypename V, typename E&gt
+	void Vertex&ltV, E&gt::add(Edge& edge) <div49 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo49">+</button>
+<div1992 id="demo49" class="collapse">{ _edges.push_back(edge); }</div49></div1992>
+
+	//----&lt index non-const vertex's edges &gt-----------------------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt::Edge& Vertex&ltV, E&gt::operator[](size_t i) <div66 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo66">+</button>
+<div2004 id="demo66" class="collapse">{ return _edges[i]; }</div66></div2004>
+
+	//----&lt index const vertex's edges &gt---------------------------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt::Edge Vertex&ltV, E&gt::operator[](size_t i) const <div93 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo93">+</button>
+<div1990 id="demo93" class="collapse">{ return _edges[i]; }</div93></div1990>
+
+	//----&lt set and read value of vertex's held type, V &gt----------
+	template&lttypename V, typename E&gt
+	V& Vertex&ltV, E&gt::value() <div97 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo97">+</button>
+<div2001 id="demo97" class="collapse">{ return _v; }</div97></div2001>
+
+	//----&lt return vertex's id &gt-----------------------------------
+	template&lttypename V, typename E&gt
+	size_t& Vertex&ltV, E&gt::id() <div86 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo86">+</button>
+<div2010 id="demo86" class="collapse">{ return _id; }</div86></div2010>
+
+	//----&lt return number of edges &gt-------------------------------
+	template&lttypename V, typename E&gt
+	size_t Vertex&ltV, E&gt::size() <div88 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo88">+</button>
+<div2007 id="demo88" class="collapse">{ return _edges.size(); }</div88></div2007>
+
+	///////////////////////////////////////////////////////////////
+	// Graph class
+
+	template&lttypename V, typename E&gt
+	class Graph
+	<div55 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo55">+</button>
+<div2009 id="demo55" class="collapse">{
+	public:
+		typename typedef std::vector&lt Vertex&ltV, E&gt &gt::iterator iterator;
+		iterator begin();
+		iterator end();
+		Vertex&ltV, E&gt& operator[](size_t i);
+		Vertex&ltV, E&gt operator[](size_t i) const;
+		void addVertex(Vertex&ltV, E&gt v);
+		void addEdge(E eval, Vertex&ltV, E&gt& parent, Vertex&ltV, E&gt& child);
+		size_t findVertexIndexById(size_t id);
+		size_t size();
+		template&lttypename F&gt
+		void dfs(Vertex&ltV, E&gt& v, F f);
+		std::vector&lt Vertex&ltV, E&gt &gt getadj();
+
+	private:
+		std::vector&lt Vertex&ltV, E&gt &gt adj;
+		std::unordered_map&ltsize_t, size_t&gt idMap; // id maps to graph index
+		template&lttypename F&gt
+		void dfsCore(Vertex&ltV, E&gt& v, F f);
+		std::set&ltstd::string&gt depfiles;
+		std::unordered_map&ltstd::string, std::set&ltstd::string&gt&gt depmap;
+
+	}</div55></div2009>;
+
+	template&lttypename V, typename E&gt
+	std::vector&lt Vertex&ltV, E&gt &gt Graph&ltV, E&gt::getadj()
+	<div14 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo14">+</button>
+<div1986 id="demo14" class="collapse">{
+		return adj;
+	}</div14></div1986>
+
+	//----&lt return iterator pointing to first vertex &gt-------------
+	template&lttypename V, typename E&gt
+	typename Graph&ltV, E&gt::iterator Graph&ltV, E&gt::begin() <div16 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo16">+</button>
+<div1986 id="demo16" class="collapse">{ return adj.begin(); }</div16></div1986>
+
+	//----&lt return iterator pointing one past last vertex &gt--------
+	template&lttypename V, typename E&gt
+	typename Graph&ltV, E&gt::iterator Graph&ltV, E&gt::end() <div86 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo86">+</button>
+<div2008 id="demo86" class="collapse">{ return adj.end(); }</div86></div2008>
+
+	//----&lt index non-const graph's vertex collection &gt------------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt& Graph&ltV, E&gt::operator[](size_t i) <div13 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo13">+</button>
+<div2010 id="demo13" class="collapse">{ return adj[i]; }</div13></div2010>
+
+	//----&lt index const graph's vertex collection &gt----------------
+	template&lttypename V, typename E&gt
+	typename Vertex&ltV, E&gt Graph&ltV, E&gt::operator[](size_t i) const <div85 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo85">+</button>
+<div1998 id="demo85" class="collapse">{ return adj[i]; }</div85></div1998>
+
+	//----&lt add vertex to graph's vertex collection &gt--------------
+	template&lttypename V, typename E&gt
+	void Graph&ltV, E&gt::addVertex(Vertex&ltV, E&gt v)
+	<div12 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo12">+</button>
+<div1993 id="demo12" class="collapse">{
+		adj.push_back(v);
+		idMap[v.id()] = adj.size() - 1;
+	}</div12></div1993>
+	//----&lt return number of vertices in graph's collection &gt------
+	template&lttypename V, typename E&gt
+	size_t Graph&ltV, E&gt::size() <div32 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo32">+</button>
+<div1990 id="demo32" class="collapse">{ return adj.size(); }</div32></div1990>
+
+
+
+	//----&lt return index of vertex with specified id &gt-------------
+	template&lttypename V, typename E&gt
+	size_t Graph&ltV, E&gt::findVertexIndexById(size_t id)
+	<div13 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo13">+</button>
+<div1991 id="demo13" class="collapse">{
+		return idMap[id];
+	}</div13></div1991>
+	//----&lt add edge from specified parent to child vertices &gt-----
+	template&lttypename V, typename E&gt
+	void Graph&ltV, E&gt::addEdge(E eVal, Vertex&ltV, E&gt& parent, Vertex&ltV, E&gt& child)
+	<div21 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo21">+</button>
+<div2013 id="demo21" class="collapse">{
+		size_t childIndex = findVertexIndexById(child.id());
+		if (childIndex == adj.size())
+			throw std::exception("no edge child");
+		size_t parentIndex = findVertexIndexById(parent.id());
+		if (parentIndex == adj.size())
+			throw std::exception("no edge parent");
+		Vertex&ltV, E&gt::Edge e;
+		e.first = childIndex;
+		e.second = eVal;
+		adj[parentIndex].add(e);
+	}</div21></div2013>
+	//----&lt recursive depth first search with action f &gt-----------
+	template&lttypename V, typename E&gt
+	template&lttypename F&gt
+	void Graph&ltV, E&gt::dfsCore(Vertex&ltV, E&gt& v, F f)
+	<div46 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo46">+</button>
+<div2007 id="demo46" class="collapse">{
+		f(v);
+		v.mark() = true;
+		for (auto edge : v)
+		<div81 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo81">+</button>
+<div1989 id="demo81" class="collapse">{
+			if (adj[edge.first].mark() == false)
+				dfsCore(adj[edge.first], f);
+		}</div81></div1989>
+		for (auto& vert : adj)
+		<div96 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo96">+</button>
+<div1987 id="demo96" class="collapse">{
+			if (vert.mark() == false)
+				dfsCore(vert, f);
+		}</div96></div1987>
+	}</div96></div1987>
+	//----&lt depth first search, clears marks for next search &gt-----
+	template&lttypename V, typename E&gt
+	template&lttypename F&gt
+	void Graph&ltV, E&gt::dfs(Vertex&ltV, E&gt& v, F f)
+	<div29 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo29">+</button>
+<div1986 id="demo29" class="collapse">{
+		dfsCore(v, f);
+		for (auto& vert : adj)
+			vert.mark() = false;
+	}</div29></div1986>
+
+	///////////////////////////////////////////////////////////////
+	// Display class
+
+	template&lttypename V, typename E&gt
+	class Display
+	<div35 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo35">+</button>
+<div2005 id="demo35" class="collapse">{
+	public:
+		typedef Graph&ltV, E&gt graph;
+		typedef Vertex&ltV, E&gt vertex;
+		typedef std::pair&ltint, E&gt edge;
+
+		static std::vector&lt Vertex&ltV, E&gt &gt vertsWithNoParents(graph& g)
+		<div73 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo73">+</button>
+<div2011 id="demo73" class="collapse">{
+			std::vector&ltsize_t&gt parentCount;
+			graph::iterator iter = g.begin();
+			while (iter != g.end())
+			<div44 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo44">+</button>
+<div2014 id="demo44" class="collapse">{
+				parentCount.push_back(0);
+				++iter;
+			}</div44></div2014>
+			iter = g.begin();
+			while (iter != g.end())
+			<div92 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo92">+</button>
+<div1994 id="demo92" class="collapse">{
+				vertex v = *iter;
+				for (size_t i = 0; i&ltv.size(); ++i)
+				<div53 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo53">+</button>
+<div1999 id="demo53" class="collapse">{
+					edge e = v[i];
+					parentCount[e.first]++;
+				}</div53></div1999>
+				++iter;
+			}</div53></div1999>
+			std::vector&ltvertex&gt noParents;
+			for (size_t j = 0; j&ltg.size(); ++j)
+				if (parentCount[j] == 0)
+					noParents.push_back(g[j]);
+			return noParents;
+		}</div53></div1999>
+
+		static void show(graph& g)
+		<div54 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo54">+</button>
+<div2005 id="demo54" class="collapse">{
+			graph::iterator iter = g.begin();
+			while (iter != g.end())
+			<div45 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo45">+</button>
+<div1994 id="demo45" class="collapse">{
+				vertex v = *iter;
+				std::cout &lt&lt "\n  vertex id = " &lt&lt v.id() &lt&lt ", value = " &lt&lt (v.value()).c_str();
+				for (size_t i = 0; i&ltv.size(); ++i)
+				<div86 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo86">+</button>
+<div1988 id="demo86" class="collapse">{
+					vertex::Edge edge = v[i];
+					std::cout &lt&lt "\n    edge points to vertex with id = " &lt&lt g[edge.first].id();
+					std::cout &lt&lt " and value = " &lt&lt g[edge.first].value().c_str();
+					std::cout &lt&lt ", edge value = " &lt&lt (edge.second).c_str();
+				}</div86></div1988>
+				++iter;
+			}</div86></div1988>
+		}</div86></div1988>
+	}</div86></div1988>;
+	//----&lt convert integer to string &gt--------------------------
+	inline std::string ToString(int i)
+	<div74 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo74">+</button>
+<div1987 id="demo74" class="collapse">{
+		std::ostringstream in;
+		in &lt&lt i;
+		return in.str();
+	}</div74></div1987>
+	//----&lt convert string to integer &gt--------------------------
+	inline int ToInt(const std::string& str)
+	<div68 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo68">+</button>
+<div1993 id="demo68" class="collapse">{
+		std::istringstream in(str);
+		int retn;
+		in &gt&gt retn;
+		return retn;
+	}</div68></div1993>
+	//----&lt construct graph from XML string &gt--------------------
+	template&lttypename V, typename E&gt
+	void GraphFromXmlString(Graph&ltV, E&gt& gr, const std::string& Xml)
+	<div87 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo87">+</button>
+<div1990 id="demo87" class="collapse">{
+		// add vertices
+		XmlReader vrdr(Xml);
+		while (vrdr.next())
+		<div58 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo58">+</button>
+<div1996 id="demo58" class="collapse">{
+			if (vrdr.tag() == "vertex")
+			<div2 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo2">+</button>
+<div2010 id="demo2" class="collapse">{
+				XmlReader::attribElems elems = vrdr.attributes();
+				if (elems.size() &gt 1)
+				<div77 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo77">+</button>
+<div1989 id="demo77" class="collapse">{
+					Vertex&ltV, E&gt vert(elems[1].second);
+					vert.id() = ToInt(elems[0].second);
+					gr.addVertex(vert);
+				}</div77></div1989>
+				else
+				<div14 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo14">+</button>
+<div2009 id="demo14" class="collapse">{
+					throw std::exception("ill-formed graph XML");
+				}</div14></div2009>
+			}</div14></div2009>
+		}</div14></div2009>
+		// add edges
+		XmlReader erdr(Xml);
+		int parentId;
+		while (erdr.next())
+		<div34 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo34">+</button>
+<div1999 id="demo34" class="collapse">{
+			if (erdr.tag() == "vertex")
+			<div72 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo72">+</button>
+<div2014 id="demo72" class="collapse">{
+				XmlReader::attribElems elems = erdr.attributes();
+				if (elems.size() &gt 0)
+				<div33 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo33">+</button>
+<div2005 id="demo33" class="collapse">{
+					parentId = ToInt(elems[0].second);
+				}</div33></div2005>
+				else
+				<div87 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo87">+</button>
+<div1992 id="demo87" class="collapse">{
+					throw std::exception("ill-formed graph XML");
+				}</div87></div1992>
+			}</div87></div1992>
+			if (erdr.tag() == "edge")
+			<div18 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo18">+</button>
+<div2002 id="demo18" class="collapse">{
+				XmlReader::attribElems eelems = erdr.attributes();
+				if (eelems.size() &gt 1)
+				<div73 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo73">+</button>
+<div2005 id="demo73" class="collapse">{
+					int childId = ToInt(eelems[0].second);
+					E eval = eelems[1].second;
+					int parentIndex = gr.findVertexIndexById(parentId);
+					Vertex&ltV, E&gt parent = gr[parentIndex];
+					int childIndex = gr.findVertexIndexById(childId);
+					Vertex&ltV, E&gt child = gr[childIndex];
+					gr.addEdge(eval, parent, child);
+				}</div73></div2005>
+				else
+				<div63 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo63">+</button>
+<div2013 id="demo63" class="collapse">{
+					throw std::exception("ill-formed graph XML");
+				}</div63></div2013>
+			}</div63></div2013>
+		}</div63></div2013>
+	}</div63></div2013>
+	//----&lt serialize graph to XML string &gt----------------------
+	template&lttypename V, typename E&gt
+	std::string GraphToXmlString(Graph&ltV, E&gt& gr)
+	<div92 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo92">+</button>
+<div1990 id="demo92" class="collapse">{
+		XmlWriter wrg;
+		wrg.indent();
+		wrg.start("graph");
+		for (auto vert : gr)
+		<div2 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo2">+</button>
+<div2005 id="demo2" class="collapse">{
+			wrg.start("vertex");
+			wrg.addAttribute("id", ToString(vert.id()));
+			wrg.addAttribute("value", vert.value());
+			for (auto edge : vert)
+			<div13 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo13">+</button>
+<div1992 id="demo13" class="collapse">{
+				wrg.start("edge");
+				wrg.addAttribute("targetId", ToString(gr[edge.first].id()));
+				wrg.addAttribute("value", edge.second);
+				wrg.end();
+			}</div13></div1992>
+			wrg.end();
+		}</div13></div1992>
+		wrg.end();
+		return wrg.xml();
+	}</div13></div1992>
+}</div13></div1992>
+#endif</pre></body></html>

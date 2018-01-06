@@ -1,0 +1,61 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\TypeTable.h</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\TypeTable.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\TypeTable.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>#pragma once
+/////////////////////////////////////////////////////////////////////
+// TypeTable.h                                                     //
+// ver 1.0                                                         //
+//-----------------------------------------------------------------//
+// Language:    C++, Visual Studio 2015                            //
+// Platform:    Lenovo, Windows 10                                 //
+// Application: Project #2, CSE687 - Object Oriented Design, S2015 //
+// Author:		Manjunath Panduranga               				   //
+//		       					                                   //
+/////////////////////////////////////////////////////////////////////
+#ifndef TYPE_TABLE
+#define TYPE_TABLE
+
+#include&ltiostream&gt
+#include&ltstack&gt
+#include "../Parser/ConfigureParser.h"
+#include &ltset&gt
+#include "../Parser/ActionsAndRules.h"
+using namespace CodeAnalysis;
+
+struct Type_Table
+<div68 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo68">+</button>
+<div1997 id="demo68" class="collapse">{
+	using FileName = std::string;
+	FileName file_;
+	using Namespace = std::string;
+	Namespace name_;
+	using TypeName = std::string;
+	TypeName type_;
+}</div68></div1997>;
+
+class TypeTable
+<div25 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo25">+</button>
+<div2010 id="demo25" class="collapse">{
+public:
+	using Name = std::string;
+	using DefineMap = std::unordered_map&ltName, Type_Table*&gt;
+	void elements(std::string name, Type_Table *element);
+	DefineMap& getmap();
+	void show();
+	
+private:
+	DefineMap map;
+}</div25></div2010>;
+#endif
+
+
+</pre></body></html>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="Client1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client1"
+        mc:Ignorable="d"
+        Title="MainWindow"  Background="Aqua"  Height="700" Width="1000" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="                                                                             Client Window" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Aqua" FontWeight="Bold" FontSize="20" Margin="0,0,0.333,47" Width="993" Height="57" Grid.RowSpan="2" Grid.ColumnSpan="4" RenderTransformOrigin="0.863,0.402" />
+        <Button Name="btnRefrehServerLst" Grid.Row="2"  FontFamily="Comic Sans MS" Background="LightYellow" VerticalAlignment="Top" Click="btnRefrehServerLst_Click" Margin="31,73,69,0">Refresh</Button>
+        <Button  Grid.Column="0" VerticalAlignment="Top" Background="LightYellow"  FontWeight="ExtraBold" Click="Button_Click" Margin="197,45.333,120.667,0" Height="49" Grid.Row="1" Content="Browse Files&#xD;&#xA;" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button VerticalAlignment="Bottom"  Click="Button_Click_4" FontWeight="Bold" FontFamily="Comic Sans MS" Background="Tomato" Margin="31,0,72,303" Height="38" Content="File Deletion&#xD;&#xA;" Grid.Row="2"/>
+        <Button Name="btnOpenFile" Grid.Row="3" Background="LightYellow" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Grid.ColumnSpan="2" Margin="222,10,0,40.667" >open selected page</Button>
+        <Button Name="btnOpenHomePage"  Background="LightYellow" Grid.Row="3" Grid.Column="2" FontFamily="Comic Sans MS" HorizontalAlignment="Right" Margin="0,4,83.333,46.667" Width="104">open homepage</Button>
+        <TextBox Text="category1" Name="txtCategory" Background="LightYellow" FontFamily="Comic Sans MS" Foreground="Black" FontSize="16" Margin="32.333,21.333,63.333,0" Grid.Column="2" Grid.Row="1" />
+
+
+        <TextBlock Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="1" Text="Files Present in server "  HorizontalAlignment="Center" FontWeight="Black" Margin="28,328,52,0" Width="168"/>
+        <TextBlock Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="1" Text="category:"  FontWeight="Black" Margin="40.333,10,152.333,0"/>
+        <ComboBox Name="cbCategories" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" SelectedIndex="0" SelectionChanged="ComboBox_SelectionChanged" Margin="110.333,0,83.333,440" Width="55"></ComboBox>
+        <ListBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="lstSendFiles" SelectionMode="Multiple" Margin="197,47,0.333,203" />
+        <ListBox Grid.Row="2" Grid.ColumnSpan="3" Name="lstServerFiles" Margin="197,287,0.333,29" />
+
+        <Button Name="btnSendFiles" Grid.Row="2"  Background="PaleGreen" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="ExtraBold" Grid.Column="3" FontSize="25" Content="Send File" Click="Button_Click_2" Margin="9.667,47,57.333,334"/>
+        <Button  Name="btnAnalyze" Background ="LightGreen" Grid.Row="2" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="ExtraBold" Grid.Column="3" FontSize="25" Content="Publish " Click="Button_Click_3" Margin="9.667,178,57.333,214"/>
+        <Button  Name="btndownload" Background ="LightGreen" Grid.Row="2" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="ExtraBold" Grid.Column="3" FontSize="25" Content="Download " Click="Button_Click_5" Margin="9.667,278,57.333,114"/>
+
+    </Grid>
+</Window>

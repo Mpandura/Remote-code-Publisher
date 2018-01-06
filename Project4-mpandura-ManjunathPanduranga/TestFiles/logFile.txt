@@ -1,0 +1,30 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Fri Mar 10 21:01:58 2017
+     Path: "C:\Users\Manjunath Gowda\Downloads\CodeAnalyzer (1)\TestFiles"
+     Args: Test1.cpp, /m, /r, /f
+                                                                               
+           Code Metrics - Start Line, Size (lines/code), and Complexity (number of scopes)
+    ==============================================================================================
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                             namespace                   Global Namespace       1       1       5
+
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                 Test1.cpp    function                              Test1       6       2       1
+                 Test1.cpp    function                             ~Test1       8       2       1
+                 Test1.cpp    function                           toString      13       5       1
+                 Test1.cpp    function                               main      24       5       1
+
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+
+
+
+    searched     4 dirs
+   processed     1 files

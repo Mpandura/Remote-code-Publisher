@@ -1,0 +1,112 @@
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\bin\Debug\Client1.exe.config
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\bin\Debug\Client1.exe
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\bin\Debug\Client1.pdb
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\bin\Debug\CLIShim.dll
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\bin\Debug\CLIShim.pdb
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\MainWindow.g.cs
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\App.g.cs
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.cache
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.lref
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\MainWindow.baml
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.g.resources
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.Properties.Resources.resources
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.exe
+Z:\Documents\OOD\project4\Main\RemotePublisher\Client1\obj\Debug\Client1.pdb
+C:\OOD\RemotePublisher\Client1\bin\Debug\Client1.exe.config
+C:\OOD\RemotePublisher\Client1\bin\Debug\Client1.exe
+C:\OOD\RemotePublisher\Client1\bin\Debug\Client1.pdb
+C:\OOD\RemotePublisher\Client1\bin\Debug\CLIShim.dll
+C:\OOD\RemotePublisher\Client1\bin\Debug\CLIShim.pdb
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+C:\OOD\RemotePublisher\Client1\obj\Debug\MainWindow.g.cs
+C:\OOD\RemotePublisher\Client1\obj\Debug\App.g.cs
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.cache
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.lref
+C:\OOD\RemotePublisher\Client1\obj\Debug\MainWindow.baml
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.g.resources
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.Properties.Resources.resources
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.exe
+C:\OOD\RemotePublisher\Client1\obj\Debug\Client1.pdb
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\bin\Debug\Client1.exe.config
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\bin\Debug\Client1.exe
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\bin\Debug\Client1.pdb
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\bin\Debug\CLIShim.dll
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\bin\Debug\CLIShim.pdb
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\MainWindow.g.cs
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\App.g.cs
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.cache
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1_MarkupCompile.lref
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\MainWindow.baml
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.g.resources
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.Properties.Resources.resources
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.exe
+C:\Users\Manjunath Gowda\Desktop\ip4\RemotePublisher\Client1\obj\Debug\Client1.pdb
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.g.cs
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\App.g.cs
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.cache
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.lref
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe.config
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.pdb
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.dll
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.pdb
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.baml
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.g.resources
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.Properties.Resources.resources
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.exe
+C:\Users\Manjunath Gowda\Desktop\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.pdb
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe.config
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.pdb
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.dll
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.pdb
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.g.cs
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\App.g.cs
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.cache
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.lref
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.baml
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.g.resources
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.Properties.Resources.resources
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.exe
+C:\Users\project 4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.pdb
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe.config
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.pdb
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.dll
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\CLIShim.pdb
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.g.cs
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\App.g.cs
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.cache
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.lref
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.baml
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.g.resources
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.Properties.Resources.resources
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.exe
+C:\Users\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.pdb
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe.config
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.exe
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\Client1.pdb
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\ShimLayer.dll
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\bin\Debug\ShimLayer.pdb
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csprojResolveAssemblyReference.cache
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.g.cs
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\App.g.cs
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.cache
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1_MarkupCompile.lref
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\MainWindow.baml
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.g.resources
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.Properties.Resources.resources
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.csproj.GenerateResource.Cache
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.exe
+E:\project4\Project3-mpandura-ManjunathPanduranga\Client1\obj\Debug\Client1.pdb

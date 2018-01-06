@@ -1,0 +1,99 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.h</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\AbstrSynTree.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.h.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\SCC.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp.html">E:\project4\Project3-mpandura-ManjunathPanduranga\Pub_Exec\Repository\category1\publisherExecutive.cpp</a>
+</div><hr /><body><pre>#pragma once
+/////////////////////////////////////////////////////////////////////
+// SCC.h - Finds the strongly connected components               //
+// ver 1.0                                                         //
+//-----------------------------------------------------------------//
+// Language:    C++, Visual Studio 2015                            //
+// Platform:    Lenovo, Windows 10                                 //
+// Application: Project #2, CSE687 - Object Oriented Design, S2015 //
+// Author:		Manjunath Panduranga               				   //
+//		       					                                   //
+/////////////////////////////////////////////////////////////////////
+#ifndef STRONGCOMP_H
+#define STRONGCOMP_H
+
+//Module Operations :
+//== == == == == == == == ==
+//It defines two classes Graph database class and an findingSCC class
+//*findingSCC works as a container class finding all the strongly connected
+//components using the Tarjan's algorithm
+//*Graph class creates a graph containing a vertex set and a adjacency
+//list at run time.
+#include "../Parser/ActionsAndRules.h"
+#include &ltstack&gt
+#include &ltset&gt
+#include"Graph.h"
+
+using namespace GraphAnal;
+typedef Graph&ltstd::string, std::string&gt graph;
+
+
+namespace CodeAnalysis
+<div96 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo96">+</button>
+<div2002 id="demo96" class="collapse">{
+	class strongly_connected_components
+	<div85 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo85">+</button>
+<div1995 id="demo85" class="collapse">{
+		using StrongMap = std::unordered_map&ltstd::string, std::set&ltstd::string&gt&gt;
+		using StrongMap_ = std::unordered_map&ltint, std::vector&ltint&gt&gt;
+	public:
+		void findingSCC(); // finding of findingSCC
+		// builds the graph of all the files
+		strongly_connected_components::strongly_connected_components(graph& g) : graph_(g) <div40 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo40">+</button>
+<div1999 id="demo40" class="collapse">{ 
+			count = 0;
+			Vertex_ = graph_.size();
+		}</div40></div1999>
+		void StrongRecur(int m, int disc[], int low[], std::stack&ltint&gt *stack, bool visited[]);// A Recursive function used by findingSCC()
+		StrongMap& getSCC() // the strong connected components maps is being returned
+		<div95 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo95">+</button>
+<div2009 id="demo95" class="collapse">{ 
+			return strongMap_;
+		}</div95></div2009>  
+
+		StrongMap_& getCC() // the strong connected components maps is being returned
+		<div19 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo19">+</button>
+<div2010 id="demo19" class="collapse">{
+			return strongMap;
+		}</div19></div2010>
+		std::unordered_map&ltstd::string, int&gt strongly_connected_components::getUniquetable()
+		<div76 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo76">+</button>
+<div1989 id="demo76" class="collapse">{
+			return uniques;
+		}</div76></div1989>
+		std::string strongly_connected_components::getName(int i)
+		<div58 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo58">+</button>
+<div2007 id="demo58" class="collapse">{
+			for (auto row : uniques)
+				if (uniques[row.first] == i)
+					return row.first;
+			return std::string();
+		}</div58></div2007>
+		void persistsIntoXml(std::string filePa);
+	private:
+		Graph&ltstd::string, std::string&gt &graph_;
+		StrongMap strongMap_;
+		StrongMap_ strongMap;
+		int count; // counting the strongly connected components
+		size_t Vertex_;
+		std::unordered_map&ltstd::string, int&gt uniques;
+	}</div58></div2007>;
+}</div58></div2007>
+#endif</pre></body></html>

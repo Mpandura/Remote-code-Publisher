@@ -1,0 +1,254 @@
+<!DOCTYPE html><html>	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>.collapsing{background-color: yellow;}body{margin: 20px;color: black;background-color: #f4f2c6;font-family: Consolas;font - weight: 600;font - size: 90 % ;}.indent{margin - left: 20px;margin - right: 20px;}h4{margin - bottom: 3px;margin - top: 3px;}</style></head>	<h3>C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlWriter.cpp</h3><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.h.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\Graph.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.h.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlReader.h</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlWriter.cpp.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlWriter.cpp</a>
+</div><hr /><div class = "indent"><hr /><h4>Dependencies:</h4><a href ="C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlWriter.h.html">C:\Users\Manjunath Gowda\Desktop\Project3-mpandura-ManjunathPanduranga\Graph\Graph\XmlWriter.h</a>
+</div><hr /><body><pre>///////////////////////////////////////////////////////////////////////
+// XmlWriter.cpp - Create XML Strings                                //
+// ver 4                                                             //
+// Language:    Visual C++, Visual Studio 2010, SP1                  //
+// platform:    Toshiba Portege R705, Windows 7, Home Premium, SP1   //
+// Application: Summer 2011 Projects                                 //
+// Author:      Jim Fawcett, Syracuse University, CST 4-187          //
+//              www.lcs.syr.edu/faculty/fawcett, (315) 443-3948      //
+///////////////////////////////////////////////////////////////////////
+
+#include "XmlWriter.h"
+
+//----&lt indent helper function &gt-------------------------------------
+
+void XmlWriter::indentIt()
+<div81 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo81">+</button>
+<div2009 id="demo81" class="collapse">{
+    _xml += '\n';
+    for(size_t i=0; i&lt_level; ++i)
+      _xml += "  ";
+}</div81></div2009>
+//----&lt add opening tag &gt--------------------------------------------
+
+XmlWriter& XmlWriter::start(const std::string& tag)
+<div53 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo53">+</button>
+<div2004 id="demo53" class="collapse">{
+  if(_indented)
+  <div18 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo18">+</button>
+<div1993 id="demo18" class="collapse">{
+    indentIt();
+    ++_level;
+  }</div18></div1993>
+  _tag = tag;
+  _xml += '&lt' + tag + '&gt';
+  tagStack.push(tag);
+  return *this;
+}</div18></div1993>
+//----&lt add attribute to opening tag &gt-------------------------------
+//
+//  Must be applied before adding body or closing
+//
+XmlWriter& XmlWriter::addAttribute(const std::string& name, const std::string& value)
+<div0 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo0">+</button>
+<div1993 id="demo0" class="collapse">{
+  position = _xml.find_last_of('&gt');
+  if(_xml[--position] == '/')
+  <div27 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo27">+</button>
+<div2002 id="demo27" class="collapse">{
+    _xml.insert(position,'"' + value + '"' + ' ');
+    _xml.insert(position,name + '=');
+  }</div27></div2002>
+  else
+  <div28 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo28">+</button>
+<div1998 id="demo28" class="collapse">{
+    _xml.insert(++position,'"' + value + '"');
+    _xml.insert(position,' ' + name + '=');
+  }</div28></div1998>
+  return *this;
+}</div28></div1998>
+//----&lt add body string to opening tag &gt-----------------------------
+
+XmlWriter& XmlWriter::addBody(const std::string& body)
+<div48 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo48">+</button>
+<div1998 id="demo48" class="collapse">{
+  if(_indented)
+  <div7 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo7">+</button>
+<div2006 id="demo7" class="collapse">{
+    indentIt();
+  }</div7></div2006>
+  _xml += body;
+  return *this;
+}</div7></div2006>
+//----&lt add closing tag &gt--------------------------------------------
+
+XmlWriter& XmlWriter::end()
+<div10 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo10">+</button>
+<div2002 id="demo10" class="collapse">{
+  if(_indented)
+  <div13 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo13">+</button>
+<div1989 id="demo13" class="collapse">{
+    --_level;
+    indentIt();
+  }</div13></div1989>
+  _tag = tagStack.top();
+  tagStack.pop();
+  _xml += "&lt/" + _tag + '&gt';
+  return *this;
+}</div13></div1989>
+//----&lt construct element from tag and body &gt------------------------
+
+XmlWriter& XmlWriter::element(const std::string& tag, const std::string& body)
+<div9 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo9">+</button>
+<div2011 id="demo9" class="collapse">{
+  start(tag);
+  addBody(body);
+  end();
+  return *this;
+}</div9></div2011>
+//----&lt add XML declaration &gt----------------------------------------
+//
+//  May be invoked once anytime during construction
+//
+XmlWriter& XmlWriter::addDeclaration()
+<div35 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo35">+</button>
+<div2006 id="demo35" class="collapse">{
+  _xml = "&lt? xml version=\"1.0\" ?&gt" + _xml;
+  return *this;
+}</div35></div2006>
+//----&lt add XML comment ---------------------------------------------
+//
+//  Will be placed at the end of XML constructed so far
+//
+XmlWriter& XmlWriter::addComment(const std::string& cmt)
+<div0 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo0">+</button>
+<div2014 id="demo0" class="collapse">{
+  if(_indented)
+  <div19 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo19">+</button>
+<div2011 id="demo19" class="collapse">{
+    indentIt();
+  }</div19></div2011>
+  _xml += "&lt!-- " + cmt + " --&gt";
+  return *this;
+}</div19></div2011>
+//----&lt test stub &gt--------------------------------------------------
+
+#ifdef TEST_XMLWRITER
+
+#include &ltiostream&gt
+#include &ltfstream&gt
+
+void mOut(const std::string& message)
+<div98 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo98">+</button>
+<div1988 id="demo98" class="collapse">{
+  std::cout &lt&lt "\n  " &lt&lt message.c_str();
+}</div98></div1988>
+
+void main()
+<div24 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo24">+</button>
+<div2013 id="demo24" class="collapse">{
+  mOut("Testing XmlWriter");
+  mOut("=================");
+
+  mOut("creating XML writer object:"); 
+  XmlWriter wtr;
+  wtr.indent();
+
+  mOut("adding XML declaration:");
+  wtr.addDeclaration();
+  mOut(wtr.xml());
+
+  mOut("adding comment:");
+  wtr.addComment("top level comment");
+  mOut(wtr.xml());
+
+  mOut("adding root element:");
+  wtr.start("root");
+  mOut(wtr.xml());
+
+  mOut("adding attributes:");
+  wtr.addAttribute("att1","val1");
+  wtr.addAttribute("att2","val2");
+  mOut(wtr.xml());
+
+  mOut("adding comment:");
+  wtr.addComment("comment in root's body");
+  mOut(wtr.xml());
+
+  mOut("Creating self-closing element:");
+  wtr.start("child1");
+  mOut(wtr.xml());
+
+  mOut("adding attribute:");
+  wtr.addAttribute("c1name","c1value");
+  mOut(wtr.xml());
+  
+  mOut("adding child to root's body:");
+  wtr.end();
+  mOut(wtr.xml());
+
+  mOut("adding another comment");
+  wtr.addComment("another root's body comment");
+  mOut(wtr.xml());
+
+  wtr.start("child2");
+  wtr.start("grandchild21");
+  wtr.end();
+  wtr.end();
+
+  mOut("adding string to root's body:"); 
+  wtr.addBody("root's body");
+  mOut(wtr.xml());
+
+  mOut("closing root element:\n");
+  wtr.end();
+
+  std::cout &lt&lt "\n\n  writing completed XML";
+  std::cout &lt&lt "\n -----------------------\n";
+  std::cout &lt&lt wtr.xml();
+
+  mOut("\n  writing XML to file \"Test.xml\":");
+  std::ofstream out("test.xml");
+  if(out.good())
+  <div44 class="container">
+<button type="button" class = "btn btn-info" data-toggle="collapse" data-target ="#demo44">+</button>
+<div2014 id="demo44" class="collapse">{
+    out &lt&lt wtr.xml().c_str();
+    out.close();
+  }</div44></div2014>
+  std::cout &lt&lt std::endl;
+
+  mOut("creating composite element:");
+  XmlWriter cwtr, bcwtr1, bcwtr2;
+  std::string temp = 
+    bcwtr1.element("child1","child1's body")
+    .element("child2","child2's body").xml();
+  std::cout &lt&lt "\n  " &lt&lt bcwtr1.xml();
+  bcwtr1.clear();
+
+  std::cout &lt&lt "\n  " &lt&lt
+    cwtr.start("parent")
+    .addBody(bcwtr1.element("child1","child1's body").xml())
+    .addBody(bcwtr2.element("child2","body2").xml())
+    .end().xml();
+  std::cout &lt&lt "\n\n";
+}</div44></div2014>
+#endif
+</pre></body></html>

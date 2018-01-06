@@ -1,0 +1,107 @@
+
+                                      CodeAnalysis - Version 1.4
+    ==============================================================================================
+     Thu May  4 22:30:54 2017
+     Path: "E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files"
+     Args: *.h, *.cpp, /f, /r
+                                                                               
+                          Functions Exceeding Metric Limits and Public Data
+    ==============================================================================================
+                 file name        type                               name    line    size    cplx
+    -----------------------  ----------  ---------------------------------  ------  ------  ------
+                   Graph.h    function                 GraphFromXmlString     356      57      12
+                   SCC.cpp    function                        StrongRecur      41      51       7
+    publisherExecutive.cpp    function                  processSourceCode     372      95       8
+    publisherExecutive.cpp    function                               main     877     182      15
+
+              public data: Graph.h : 98 - class Vertex
+                typedef std :: pair < int , E > Edge ; 
+              public data: Graph.h : 289 - class Display
+                typedef Graph < V , E > graph ; 
+              public data: Graph.h : 290 - class Display
+                typedef Vertex < V , E > vertex ; 
+              public data: Graph.h : 291 - class Display
+                typedef std :: pair < int , E > edge ; 
+
+
+ -------------------------------------------------------------------------------------------------------------------------------
+   |    Element key  |      type name  |          namespace      |                           filename
+ -------------------------------------------------------------------------------------------------------------------------------
+  |vertsWithNoParents  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |        GraphAnal  |    namespace  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |          addEdge  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |             done  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  | Global Namespace  |    namespace  |       Global Namespace   |                                      
+  |           Vertex  |        class  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |         TreeWalk  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |               id  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |             mark  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |CodeAnalysisExecutive  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |            begin  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |            value  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  | GraphToXmlString  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |              end  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |              dir  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |              dfs  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |              add  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |            ToInt  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |  setDisplayModes  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       operator[]  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |             show  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |             size  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |        addVertex  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |             file  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |          dfsCore  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |            Graph  |        class  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |           getadj  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |         showData  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |findVertexIndexById  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |      setLanguage  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |          Display  |        class  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |       getFileMap  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |showCommandLineArguments  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |         ToString  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |   cppImplemFiles  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |GraphFromXmlString  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\Graph.h
+  |        compFiles  |       struct  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |      AnalFileMgr  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |         numFiles  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |        showUsage  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |          numDirs  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |~CodeAnalysisExecutive  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |     showActivity  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |ProcessCommandLine  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |  getAnalysisPath  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |   getSourceFiles  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |         contains  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |   cppHeaderFiles  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |      csharpFiles  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |displayMetricSummary  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |      startLogger  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |        fileSLOCs  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |           string  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |ChangeFirstCharOfExt  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |    clearActivity  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |processSourceCode  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |complexityAnalysis  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |   displayMetrics  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |        CompNames  |       struct  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |         CompExts  |       struct  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       operator()  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  | displayDataLines  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |displayMetricsLine  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |        removeExt  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |    displayHeader  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |             void  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       displayAST  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |     displaySlocs  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |dispatchOptionalDisplays  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |      flushLogger  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       stopLogger  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       setLogFile  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       systemTime  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |             main  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\publisherExecutive.cpp
+  |       findingSCC  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\SCC.cpp
+  |      StrongRecur  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\SCC.cpp
+  |  persistsIntoXml  |     function  |              GraphAnal   |   E:\project4\Project3-mpandura-ManjunathPanduranga\x64\Debug\files\category1\SCC.cpp
+ 
